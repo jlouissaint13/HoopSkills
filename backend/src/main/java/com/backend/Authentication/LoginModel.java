@@ -1,5 +1,6 @@
 package com.backend.Authentication;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Setter
 public class LoginModel {
     @Id
-    private Long hooperid;
+    private Long hooperID;
 
     @Column(name = "email")
     private String email;
