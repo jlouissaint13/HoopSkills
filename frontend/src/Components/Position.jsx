@@ -1,7 +1,34 @@
 import React, { useState } from "react";
 import { Card, CardContent, Button, Grid, Typography, Box } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
-
+import {useNavigate} from "react-router-dom";
+async function register(position) {
+    alert("started!")
+    const data = {
+        //bandaid
+        //TODO
+        hooperID: parseInt(localStorage.getItem("hooperID")),
+        firstName: localStorage.getItem("firstName"),
+        lastName: localStorage.getItem("lastName"),
+        email: localStorage.getItem("email"),
+        username: localStorage.getItem("username"),
+        password: localStorage.getItem("password"),
+        position: position
+    };
+    const response = await fetch('http://localhost:8080/Registration/Request',{
+        method:'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
+    if (response.status === 200) {
+        alert("Registered")
+    }
+    else {
+        alert("Failed")
+    }
+}
 const positions = [
     {
         id: "pg",
@@ -101,10 +128,12 @@ function PositionSelector({ onPositionSelect = () => {}, selectedPosition = "" }
                     onClick={() => {
                         const position = positions.find((p) => p.id === selected);
                         if (position) onPositionSelect(position);
+                        register(position.id)
                     }}
                     disabled={!selected}
                 >
                     Continue with {selected ? positions.find((p) => p.id === selected)?.name : "selected position"}
+
                 </Button>
             </Box>
         </Box>

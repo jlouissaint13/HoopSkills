@@ -1,4 +1,4 @@
-import {use, useState} from 'react'
+import {useState} from 'react'
 import basketballAlien from '../assets/maxresdefault.jpg'
 import altImage from '../assets/altImage.png'
 import './Registration.css'
@@ -26,32 +26,22 @@ const handleInputChange = (event) => {
     });
 }
 //TODO ADD Validation
-async function register() {
-    alert("started!")
-    const data = {
+function register() {
+    //set local storage for the next page where we actually choose a positon;
+    setLocalStorage()
+    navigate("/position")
+
+}
+    function setLocalStorage(){
         //bandaid
         //TODO
-        hooperID: Math.floor(Math.random() * 1000),
-        firstName: values.firstName.trim(),
-        lastName: values.lastName.trim(),
-        email: values.email.trim(),
-        username: values.username.trim(),
-        password: values.password.trim(),
+        localStorage.setItem("hooperID", Math.floor(Math.random() * 10000).toString());
+        localStorage.setItem("firstName", values.firstName.trim());
+        localStorage.setItem("lastName", values.lastName.trim());
+        localStorage.setItem("email", values.email.trim());
+        localStorage.setItem("username", values.username.trim());
+        localStorage.setItem("password", values.password.trim());
     }
-    const response = await fetch('http://localhost:8080/Registration/Request',{
-        method:'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    });
-    if (response.status === 200) {
-        navigate('/position');
-    }
-   else {
-       alert("Failed")
-    }
-}
 
     return (
         <>
