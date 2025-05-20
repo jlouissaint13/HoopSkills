@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 //TODO Validation
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("Registration")
 public class RegisterController {
     private final RegisterService registerService;
