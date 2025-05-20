@@ -1,5 +1,8 @@
 package com.backend.Authentication;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class LoginService {
     private final LoginRepo loginRepo;
     public LoginService(LoginRepo loginRepo) {
@@ -7,6 +10,6 @@ public class LoginService {
     }
 
     public boolean Login(String email,String password) {
-        return loginRepo.findByEmail(email).toString().equals(password);
+        return this.loginRepo.findByEmail(email).toString().equals(password);
     }
 }
