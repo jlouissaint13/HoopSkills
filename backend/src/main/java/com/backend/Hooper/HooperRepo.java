@@ -13,9 +13,5 @@ public interface HooperRepo extends CrudRepository<HooperModel,Long> {
     List<HooperModel> findAllByEmail(String email);
 
 
-    @Query("select h.password from HooperModel h where h.email = :email ")
-    List<HooperRepo> findByEmail(@Param("email")String email);
 
-    @Query("select h.password from HooperModel h where h.username = :username")
-    HooperRepo findByUsername(@Param("username")String username);
 }
