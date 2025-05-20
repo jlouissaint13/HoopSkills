@@ -1,8 +1,10 @@
 import {use, useState} from 'react'
-import basketballAlien from './assets/maxresdefault.jpg'
-import altImage from './assets/altImage.png'
+import basketballAlien from '../assets/maxresdefault.jpg'
+import altImage from '../assets/altImage.png'
 import './Registration.css'
 import {Button, TextField} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
 function Registration() {
 
 const form = {
@@ -14,7 +16,7 @@ const form = {
     username: ''
 };
 const [values,setValues] = useState(form);
-
+const navigate = useNavigate();
 const handleInputChange = (event) => {
     const {name,value} = event.target;
 
@@ -44,10 +46,11 @@ async function register() {
         body: JSON.stringify(data)
     });
     if (response.status === 200) {
-        alert("Good!")
-        return
+        navigate('/position');
     }
-   alert("Failed")
+   else {
+       alert("Failed")
+    }
 }
 
     return (
