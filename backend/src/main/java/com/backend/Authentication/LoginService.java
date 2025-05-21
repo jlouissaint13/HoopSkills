@@ -10,6 +10,6 @@ public class LoginService {
     }
 
     public boolean Login(String email,String password) {
-        return this.loginRepo.findByEmail(email).toString().equals(password);
+        return this.loginRepo.findByEmail(email).equals(password);
     }
 }
