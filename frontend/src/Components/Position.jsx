@@ -73,6 +73,7 @@ function PositionSelector({ onPositionSelect = () => {}, selectedPosition = "" }
     const handleSelect = (position) => {
         setSelected(position.id);
         onPositionSelect(position);
+
     };
 
     return (
