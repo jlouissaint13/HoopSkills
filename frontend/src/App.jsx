@@ -12,11 +12,11 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-              <Route index element={<Archetype/>} />
+              <Route index element={<Login/>} />
             <Route path="/Position" element={<Position/>}/>
               <Route path="/Register" element={<Register/>}/>
               <Route path="/Archetype" element={<Archetype/>}/>
-
+               <Route path="/Login" element={<Login/>}/>
           </Routes>
         </BrowserRouter>
       </div>

@@ -4,11 +4,18 @@ import CheckIcon from '@mui/icons-material/Check';
 import positionView from "./Position.jsx";
 import {archetypes} from "./ArchetypeObjects.js";
 function Archetype() {
-  /*
-    async function register() {
+
+    async function register(archetype) {
         alert("started!")
         const data = {
-
+            hooperID: parseInt(localStorage.getItem("hooperID")),
+            firstName: localStorage.getItem("firstName"),
+            lastName: localStorage.getItem("lastName"),
+            email: localStorage.getItem("email"),
+            username: localStorage.getItem("username"),
+            password: localStorage.getItem("password"),
+            position: position,
+            archetype: archetype
         };
         const response = await fetch('http://localhost:8080/Registration/Request', {
             method: 'POST',
@@ -25,8 +32,7 @@ function Archetype() {
     }
 
 
-   */
-   localStorage.setItem("position","pg");
+
    const position = localStorage.getItem("position")
     const positions = [
         {
@@ -72,10 +78,10 @@ function Archetype() {
         return (
             <Box sx={{maxWidth: "1200px", margin: "auto", padding: "24px"}}>
                 <Typography variant="h4" gutterBottom align="center">
-                    Select Your Position
+                    What type of playstyle do you have?
                 </Typography>
                 <Typography variant="body1" color="textSecondary" gutterBottom align="center">
-                    Choose your basketball position to get customized training content.
+                    Choose your Archetype to get customized training content.
                 </Typography>
 
                 <Grid container spacing={4} justifyContent="center">
@@ -122,11 +128,12 @@ function Archetype() {
                         onClick={() => {
                             const position = positions.find((p) => p.id === selected);
                             if (position) onPositionSelect(position);
-                            register(position.id);
+                            register(position.name);
                         }}
                         disabled={!selected}
                     >
                         Continue with {selected ? positions.find((p) => p.id === selected)?.name : "selected position"}
+
                     </Button>
                 </Box>
             </Box>

@@ -39,6 +39,9 @@ import org.springframework.stereotype.Component;
         @Column(name = "position")
         private String position;
 
+        @Column(name = "archetype")
+        private String archetype;
+
     }
 
 
