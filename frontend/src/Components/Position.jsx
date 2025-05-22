@@ -4,6 +4,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import {useNavigate} from "react-router-dom";
 async function register(position) {
     alert("started!")
+    localStorage.setItem("position",position)
     const data = {
         //bandaid
         //TODO
