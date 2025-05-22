@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent, Button, Grid, Typography, Box } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 import {useNavigate} from "react-router-dom";
+
 async function register(position) {
     alert("started!")
     localStorage.setItem("position",position)

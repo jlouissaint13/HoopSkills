@@ -30,34 +30,34 @@ function Archetype() {
    const position = localStorage.getItem("position")
     const positions = [
         {
-            id: "Sharpshooter",
+            id: archetypes[position][Object.keys(archetypes[position]).at(0)].id,
             name:  archetypes[position][Object.keys(archetypes[position]).at(0)].name,
             description: archetypes[position][Object.keys(archetypes[position]).at(0)].description,
-            icon: "🏀",
+            icon: archetypes[position][Object.keys(archetypes[position]).at(0)].icon,
         },
         {
-            id: position,
+            id: archetypes[position][Object.keys(archetypes[position]).at(1)].id,
             name: archetypes[position][Object.keys(archetypes[position]).at(1)].name,
             description: archetypes[position][Object.keys(archetypes[position]).at(1)].description,
-            icon: "🔫",
+            icon: archetypes[position][Object.keys(archetypes[position]).at(1)].icon,
         },
         {
-            id: position,
+            id: archetypes[position][Object.keys(archetypes[position]).at(2)].id,
             name: archetypes[position][Object.keys(archetypes[position]).at(2)].name,
             description: archetypes[position][Object.keys(archetypes[position]).at(2)].description,
-            icon: "🦅",
+            icon: archetypes[position][Object.keys(archetypes[position]).at(2)].icon,
         },
         {
-            id: position,
+            id: archetypes[position][Object.keys(archetypes[position]).at(3)].id,
             name: archetypes[position][Object.keys(archetypes[position]).at(3)].name,
             description: archetypes[position][Object.keys(archetypes[position]).at(3)].description,
-            icon: "💪",
+            icon: archetypes[position][Object.keys(archetypes[position]).at(3)].icon,
         },
         {
-            id: position,
+            id: archetypes[position][Object.keys(archetypes[position]).at(4)].id,
             name: archetypes[position][Object.keys(archetypes[position]).at(4)].name,
             description: archetypes[position][Object.keys(archetypes[position]).at(4)].description,
-            icon: "🗼",
+            icon: archetypes[position][Object.keys(archetypes[position]).at(4)].icon,
         },
     ];
 
