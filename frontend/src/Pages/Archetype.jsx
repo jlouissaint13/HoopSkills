@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Card, CardContent, Button, Grid, Typography, Box } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 import positionView from "./Position.jsx";
-import {archetypes} from "./ArchetypeObjects.js";
+import {archetypes} from "../Data/ArchetypeObjects.js";
 function Archetype() {
 
     async function register(archetype) {

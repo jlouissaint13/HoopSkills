@@ -1,10 +1,11 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom";
-import Registration from "./Components/Registration.jsx";
-import Position from "./Components/Position.jsx"
-import Login from "./Components/Login.jsx"
+import Registration from "./Pages/Registration.jsx";
+import Position from "./Pages/Position.jsx"
+import Login from "./Pages/Login.jsx"
 import './App.css'
-import Archetype from "./Components/Archetype.jsx";
-import Register from "./Components/Registration.jsx"
+import Archetype from "./Pages/Archetype.jsx";
+import Register from "./Pages/Registration.jsx"
+import VideoFeed  from "./Pages/VideoFeed.jsx";
 function App() {
 
   return (
@@ -12,11 +13,12 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-              <Route index element={<Login/>} />
+              <Route index element={<VideoFeed/>} />
             <Route path="/Position" element={<Position/>}/>
               <Route path="/Register" element={<Register/>}/>
               <Route path="/Archetype" element={<Archetype/>}/>
                <Route path="/Login" element={<Login/>}/>
+              <Route path={"/VideoFeed"} element={<VideoFeed/>}/>
           </Routes>
         </BrowserRouter>
       </div>

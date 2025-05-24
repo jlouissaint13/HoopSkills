@@ -21,4 +21,6 @@ public interface LoginRepo extends CrudRepository<LoginModel,Long> {
 
     //Remember to use the object when returning all
     List<LoginModel> findAllByEmail(String email);
+
+
 }

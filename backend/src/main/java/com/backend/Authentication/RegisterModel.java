@@ -10,7 +10,7 @@ import lombok.Setter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-@Component
+
     @Entity
     @Getter
     @Setter
@@ -19,27 +19,28 @@ import org.springframework.stereotype.Component;
         @Id
         private long hooperID;
 
-        @JsonProperty("firstName")
+        @JsonProperty("name = firstName")
         @Column(name = "first_name")
         private String firstName;
+
 
         @JsonProperty("lastName")
         @Column(name = "last_name")
         private String lastName;
 
-        @Column(name = "email")
+
         private String email;
 
-        @Column(name = "password")
+
         private String password;
 
-        @Column(name = "username")
+
         private String username;
 
-        @Column(name = "position")
+
         private String position;
 
-        @Column(name = "archetype")
+
         private String archetype;
 
     }
