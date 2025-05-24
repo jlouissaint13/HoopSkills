@@ -13,6 +13,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LoginModel {
+
+    //temporary until we implement real authentication
+    private static String userEmail;
+
+
+
     @Id
     private Long hooperID;
 
@@ -25,4 +31,13 @@ public class LoginModel {
     @Column(name = "username")
     private String username;
 
+
+
+     static void setUserEmail(String userEmail) {
+        LoginModel.userEmail = userEmail;
+    }
+    static String getUserEmail() {
+         return userEmail;
+    }
 }
+
